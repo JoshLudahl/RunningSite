@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>User Page</title>
+</head>
+<body>
+<nav role="navigation">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit">POST LOGOUT</input>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+<h1>User details</h1>
+
+<span th:text="${user.email}">sdf</span>
+<span th:text="${user.role}">sdf</span>
+
+
+
+</body>
+</html>

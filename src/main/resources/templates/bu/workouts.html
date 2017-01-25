@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Spring Boot CRUD Example</title>
+</head>
+<body>
+
+<table class="table table-bordered">
+    <thead>
+    <tr class="btn-success">
+        <th>id</th>
+        <th>distance</th>
+        <th>name</th>
+        <th>duration</th>
+        <th>pace</th>
+        <th>notes</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr th:if="${#lists.isEmpty(workouts)}" class="btn-warning">
+        <td colspan="4" align="center">No Workouts Yet</td>
+    </tr>
+    <tr th:each="item : ${workouts}">
+
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.distance}"></td>
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.duration}"></td>
+        <td th:text="${item.pace}"></td>
+        <td th:text="${item.notes}"></td>
+    </tr>
+
+    </tbody>
+</table>
+<a th:href="${'/workouts/add/' +currentUser.id}">Add Workout</a>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>List of Users</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+
+
+</head>
+<body>
+
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+</div>
+
+<h1>List of Users</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>E-mail</th>
+        <th>Role</th>
+        <th>Workouts</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+
+    </tbody>
+
+    <tr th:each="user : ${users}">
+
+        <td th:text="${user.id}">1</td>
+        <td><a th:href="${'/user/' + user.id}" th:text="${user.email}">Title ...</a></td>
+        <td th:text="${user.role}">Text ...</td>
+        <td><a th:href="${'/workouts/' + user.id}">Workouts</a></td>
+
+
+    </tr>
+
+
+
+</table>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/_footer :: footer"></th:block> /*/-->
+</div>
+</body>
+</html>

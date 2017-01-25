@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head lang="en">
+
+</head>
+<body>
+<div th:fragment="header">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" th:href="@{/}">MakeMyRun </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse local" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+
+
+                    <li sec:authorize="isAuthenticated()" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Welcome, <span
+                                th:text="${#httpServletRequest.remoteUser}"></span>!<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+
+                            <li><a th:href="${'/user/' + currentUser.id}"><i class="material-icons narp">account_circle</i> My Account</a></li>
+                            <li><a th:href="${'/workouts/' + currentUser.id}"><i class="material-icons narp">directions_run</i> Workouts</a></li>
+                            <li><a th:href="${'/workouts/add/' +currentUser.id}"><i class="material-icons narp">add_circle</i> Add Workout</a></li>
+                            <li><a href="#" class="disabledItem"><i class="material-icons narp">event</i>  Workout Calendar</a></li>
+                            <li><a href="#"></a></li>
+
+
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="material-icons narp">settings</i> Settings</a></li>
+
+                            <li>
+                                <a href="javascript:{}" onclick="document.getElementById('my_form').submit()"
+                                   id="logoutLink"><i class="material-icons narp">exit_to_app</i> Sign
+                                    Out</a>
+                            </li>
+                        </ul>
+
+
+                    </li>
+                    <li sec:authorize="isAnonymous()"><a href="#" th:href="@{/login}">Sign In</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+<!--
+<div class="container">
+    <div th:fragment="header">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" th:href="@{/products}">Products</a></li>
+                        <li><a href="#" th:href="@{/product/new}">Create Product</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+</body>
+</html>

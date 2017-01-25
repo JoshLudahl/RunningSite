@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head lang="en">
+
+    <title>Welcome to Make My Run - take a look around</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+    <link href="../static/css/forms.css" rel="stylesheet" th:href="@{/css/forms.css}" />
+
+</head>
+<body>
+<!-- HEADER -->
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div layout:fragment="content">
+
+    <div class="login_wrap">
+
+        <form role="form" th:object="${form}" name="form" th:action="@{/sign_up}" method="post">
+
+            <div class="header">
+                <h3>Sign Up!</h3>
+            </div>
+            <input type="email" id="email" name="email" placeholder="Email Address" th:value="*{email}" required="required" />
+            <input type="password" id="inputPassword" name="password" placeholder="Password" required="required"/>
+            <input type="password" name="passwordRepeated" id="passwordRepeated" placeholder="Repeat Password" required="required"/>
+
+            <input class="btn bgblue" type="submit" value="Sign up"/>
+
+
+        </form>
+        <div>
+            Your information will never be shared.
+        </div>
+        <div th:errors="${form}"></div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/_footer :: footer"></th:block> /*/-->
+</div>
+</body>
+</html>

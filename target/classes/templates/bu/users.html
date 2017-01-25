@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>List of Users</title>
+</head>
+<body>
+<nav role="navigation">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/user/create">Create a new user</a></li>
+    </ul>
+</nav>
+
+<h1>List of Users</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>E-mail</th>
+        <th>Role</th>
+        <th>Workouts</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+
+    </tbody>
+
+    <tr th:each="user : ${users}">
+
+        <td th:text="${user.id}">1</td>
+        <td><a th:href="${'/user/' + user.id}" th:text="${user.email}">Title ...</a></td>
+        <td th:text="${user.role}">Text ...</td>
+        <td><a th:href="${'/workouts/' + user.id}">Workouts</a></td>
+
+
+    </tr>
+
+
+
+</table>
+</body>
+</html>

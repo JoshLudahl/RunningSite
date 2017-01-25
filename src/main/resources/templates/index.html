@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head lang="en">
+
+    <title>Welcome to Make My Run - take a look around</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+
+</head>
+<body>
+
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+</div>
+
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Welcome to MakeMy.Run, Your online running and workout log! </h1>
+        <p class="lead">We're starting out small and will be adding features as we grow.</p>
+        <p><a href="/sign_up" class="btn">Sign Up <span class="glyphicon glyphicon-menu-right"></span></a></p>
+    </div>
+
+
+</div>
+
+
+
+
+<!--
+This form is hidden and used to logout.
+-->
+<form th:action="@{/logout}" id="my_form" method="post" style="display: none">
+    <a onclick="this.form.submit();" href="#" type="submit">Logout</a>
+    <button type="submit" class="btn btn-link">Link</button>
+
+    <a href="javascript:{}" onclick="document.getElementById('my_form').submit(); return false;">submit</a>
+
+    <a href="javascript:{}" onclick="document.getElementById('my_form').submit()" id="logoutLink">poop</a>
+</form>
+
+
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/_footer :: footer"></th:block> /*/-->
+</div>
+</body>
+</html>

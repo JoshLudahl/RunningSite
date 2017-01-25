@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head lang="en">
+
+    <title>Make My Run: Workouts</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+
+</head>
+<body>
+<!-- HEADER -->
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+</div>
+
+
+<!-- MAIN CONTENT -->
+
+
+<div class="container">
+
+    <div class="jumbotron workoutsBG"></div>
+
+
+    <table class="table table-striped" th:with="sumOfMiles=${runningTotal}, sumOfMiles=0">
+        <thead class="tableHead">
+        <tr>
+            <th>Date</th>
+            <th>Distance</th>
+            <th>Name</th>
+            <th>Duration</th>
+            <th>Pace</th>
+            <th class="hidden-xs">Notes</th>
+            <th>Edit/Delete</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr th:if="${#lists.isEmpty(workouts)}" class="btn-warning">
+            <td colspan="7" align="center" class="emptyrecord">No Workouts Yet</td>
+        </tr>
+        <tr class="tableView" th:each="item : ${workouts}">
+
+            <td th:text="${#dates.format(item.getDate(), 'MM/dd/YYYY')}"></td>
+            <td th:text="${item.distance}"></td>
+            <td th:text="${item.name}"></td>
+            <td class="text-right" th:text="${item.printDuration()}">
+
+
+            </td>
+            <td th:text="${item.pace}"></td>
+            <td class="hidden-xs" th:text="${item.notes}"></td>
+            <td align="center">
+                <a th:href="@{/workouts/edit/{id}/{usr}(id=${item.id}, usr=${currentUser.id})}"><span
+                        class="glyphicon glyphicon-edit"></span></a> &nbsp; &nbsp;
+                <a th:href="@{/workouts/delete/{id}/{usr}(id=${item.id}, usr=${currentUser.id})}"><span
+                        class="glyphicon glyphicon-trash"></span></a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <a th:href="${'/workouts/add/' +currentUser.id}"><span class="glyphicon glyphicon-plus-sign"></span> Add Workout</a>
+    <!-- FOOTER -->
+    <div class="container">
+        <!--/*/ <th:block th:include="fragments/_footer :: footer"></th:block> /*/-->
+    </div>
+</div>
+
+
+
+
+<script>
+
+</script>
+
+
+</body>
+</html>

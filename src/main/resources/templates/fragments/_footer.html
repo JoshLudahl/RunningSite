@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+<div th:fragment="footer">
+    <script src="../js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <form th:action="@{/logout}" id="my_form" method="post" style="display: none">
+        <a onclick="this.form.submit();" href="#" type="submit">Logout</a>
+        <button type="submit" class="btn btn-link">Link</button>
+
+        <a href="javascript:{}" onclick="document.getElementById('my_form').submit(); return false;">submit</a>
+
+        <a href="javascript:{}" onclick="document.getElementById('my_form').submit()" id="logoutLink">poop</a>
+    </form>
+
+
+
+
+</div>
+
+</head>
+<body>
+
+</body>
+</html>

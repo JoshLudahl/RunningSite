@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Make My Run: Account Details</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+
+
+</head>
+<body>
+
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- // Start Statistical section  -->
+
+
+            <div class="row">
+            <div class="col-sm-12 resetter">
+                <div class="well crimson">
+                    <h1>Welcome, </h1>
+
+                    <span th:text="${user.email}">sdf</span>
+
+                    <h4>Runner Stastistics</h4>
+                    <p>Here you will find all of your statistics organized visually for you.</p>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-grey">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="material-icons">account_balance_wallet</i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge" th:text="${qty}"></div>
+                                        <div>Total Runs</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-grey">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="material-icons">directions_run</i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge" th:text="${distance}">359</div>
+                                        <div>Total Miles</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-grey">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="material-icons">timer</i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">7:59</div>
+                                        <div>Average Mile</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-grey">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="material-icons">timeline</i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge" th:text="${averageRun}">8.3</div>
+                                        <div>Average Run</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-grey">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="material-icons">local_hospital</i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">53</div>
+                                        <div>Average Resting HR</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-grey">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="material-icons">accessibility</i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">175</div>
+                                        <div>Average Weight</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-grey">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="material-icons">timer</i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge" th:text="${totalDuration}">8.3</div>
+                                        <div>Total Duration</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <p>Upcoming Workouts</p>
+                            <p>Text</p>
+                            <p>Text</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <p>Upcoming Races</p>
+                            <p>Text</p>
+                            <p>Text</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <p>Text</p>
+                            <p>Text</p>
+                            <p>Text</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="well">
+                            <p>Text</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="well">
+                            <p>Text</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+        </div>
+            </div>
+    <!-- // END stastical Section -->
+
+    <!-- FOOTER -->
+    <div class="container">
+        <!--/*/ <th:block th:include="fragments/_footer :: footer"></th:block> /*/-->
+    </div>
+</div>
+</body>
+</html>

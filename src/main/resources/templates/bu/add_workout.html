@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Add Workout</title>
+
+
+
+      <link href="../static/css/forms.css"
+          th:href="@{/css/forms.css}" rel="stylesheet" media="screen"/>
+          
+      <link href="../static/css/checked.css"
+        th:href="@{/css/checked.css}" rel="stylesheet" media="screen" />
+          
+          
+</head>
+<body>
+
+
+
+<div>
+
+    <div class="login_wrap">
+
+        <form th:object="${workout}" role="form" th:action="@{/addWorkout}" method="post">
+
+            <div class="header">
+                Add a Workout
+            </div>
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            <input th:field="*{name}" type="text" id="inputPassword" name="name" placeholder="Workout Name" />
+            <input th:field="*{duration}" type="text" id="inputPassword" name="duration" placeholder="Time" required="required"/>
+            <input th:field="*{distance}" type="text" id="inputPassword" name="distance" placeholder="Distance" required="required"/>
+
+
+
+
+            <textarea th:field="*{notes}" name="notes" placeholder="Activity Notes"></textarea>
+
+
+
+  <label class="tgl tgl-gray" style="font-size:30px">
+    <input type="checkbox" />
+    <span>&nbsp;&nbsp;</span>
+  </label>
+
+            <input class="btn bgblue" type="submit" value="Add Workout"/>
+            
+            
+
+
+        </form>
+        <div class="alert alert-danger" th:if="${param.error}">
+            Error, try again please.
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

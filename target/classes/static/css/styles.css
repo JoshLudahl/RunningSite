@@ -1,0 +1,207 @@
+/*
+Site Colors
+Red : #E6324B
+White : #ffffff
+Darker grey : #2B2B2B
+Lighter grey : #353634
+
+*/
+
+html {
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    min-height: 100%;
+    height: 100%;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    height: 100%;
+    background: #e9e9e9;
+    color: #333;
+    letter-spacing: .03em;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.navbar {
+    margin-bottom: 0;
+    background-color: #FFFFFF;
+    border: none;
+}
+
+.nav a:hover {
+    color: #E6324B !important;
+}
+.nav a {
+    color: #353634 !important;
+}
+h1, .lead {
+    color: #2B2B2B !important;
+}
+
+h3 {
+    color: #2B2B2B;
+}
+
+.jumbotron {
+    background-color: #E6324B;
+    border-radius:0 !important;
+}
+
+.navbar-brand {
+    color: #2B2B2B !important;
+}
+
+.btnMain {
+    background-color: #353634 !important;
+    border: none;
+}
+.btnMain:hover {
+    background-color: #2B2B2B !important;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+/* Table Stuff */
+
+.btn-success > th {
+    background-color: #2aabd2;
+    color: #8a6d3b;
+}
+.glyphicon, a {
+    color: #E6324B;
+}
+
+.workoutsBG {
+    background: url("../images/X2Q7LBUF6U.jpg") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100%;
+    height: 20em;
+}
+
+.huge {
+    font-size: 40px;
+}
+
+.panel-green {
+    border-color: #5cb85c;
+}
+
+.panel-green .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green a {
+    color: #5cb85c;
+}
+
+.panel-green a:hover {
+    color: #3d8b3d;
+}
+
+.panel-grey {
+    border-color: #353634;
+}
+
+.panel-grey .panel-heading {
+    border-color: #353634;
+    color: #fff;
+    background-color: #353634;
+}
+
+.panel-grey:hover .panel-heading:hover {
+    border-color: #2B2B2B;
+}
+
+.panel-red a {
+    color: #d9534f;
+}
+
+.panel-red a:hover {
+    color: #b52b27;
+}
+
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+
+.panel-yellow .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+
+.panel-yellow a {
+    color: #f0ad4e;
+}
+
+.panel-yellow a:hover {
+    color: #df8a13;
+}
+
+.well {
+    background: rgb(230, 50, 75);
+    color: #fff;
+}
+
+i {
+    display: inline-block;
+    vertical-align: middle !important;
+}
+li, li a {
+    vertical-align: middle !important;
+}
+
+.material-icons{
+    display: inline-block;
+
+    /* size, color, etc. */ }
+
+.middle { vertical-align: middle; }
+
+.dropdown-menu>li>a {
+    vertical-align: middle !important;
+
+}
+
+/* change padding for menu only */
+.dropdown-menu>li>a>.material-icons {
+    padding-right: .5em;
+}
+
+.tableView>td>span {
+    padding: 0;
+    margin: 0;
+}
+.emptyrecord {
+    color: #000;
+    font-size: 2em;
+}
