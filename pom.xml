@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>UserManagement</groupId>
-    <artifactId>FirstForm</artifactId>
+     <artifactId>helloworld</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -116,6 +116,7 @@
 
                         </manifest>
                     </archive>
+			
                 </configuration>
             </plugin>
         </plugins>
